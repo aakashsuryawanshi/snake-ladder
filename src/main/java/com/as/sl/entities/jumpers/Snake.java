@@ -1,4 +1,4 @@
-package com.as.sl.entities;
+package com.as.sl.entities.jumpers;
 
 import com.as.sl.exception.SLException;
 

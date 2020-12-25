@@ -1,4 +1,4 @@
-package com.as.sl.entities;
+package com.as.sl.entities.jumpers;
 
 public abstract class Jumper {
 	int start;

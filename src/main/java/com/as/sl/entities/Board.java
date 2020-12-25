@@ -3,6 +3,8 @@ package com.as.sl.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.as.sl.entities.jumpers.Jumper;
+
 public class Board {
 
 	List<Jumper> jumpers;
