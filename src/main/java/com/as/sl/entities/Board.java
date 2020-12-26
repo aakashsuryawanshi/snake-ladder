@@ -29,7 +29,7 @@ public class Board {
 		return instance;
 	}
 	
-	public void addSanke(int start, int end) {
+	public void addSnake(int start, int end) {
 		if(!isJumperValid(start, end)) {
 			throw new SLException(ExceptionConstants.INVALID_SNAKE, ExceptionConstants.POSITION_INVALID);
 		}

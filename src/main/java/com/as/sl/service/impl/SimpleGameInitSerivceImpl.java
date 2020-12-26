@@ -78,11 +78,11 @@ public class SimpleGameInitSerivceImpl implements GameInitService{
 	
 	public void initializeBoard() {
 		Board board = Board.getInstance();
-		board.addSanke(51, 11);
-		board.addSanke(56, 15);
-		board.addSanke(62, 57);
-		board.addSanke(92, 53);
-		board.addSanke(98, 8);
+		board.addSnake(51, 11);
+		board.addSnake(56, 15);
+		board.addSnake(62, 57);
+		board.addSnake(92, 53);
+		board.addSnake(98, 8);
 		board.addLadder(2, 38);
 		board.addLadder(4, 14);
 		board.addLadder(9, 31);
