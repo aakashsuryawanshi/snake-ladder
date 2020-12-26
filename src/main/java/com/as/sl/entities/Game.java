@@ -3,6 +3,7 @@ package com.as.sl.entities;
 
 
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 import com.as.sl.constants.ExceptionConstants;
 import com.as.sl.entities.dice.Dice;
@@ -14,7 +15,7 @@ import com.as.sl.exception.SLException;
 public class Game {
 	String gameId;
 	Board board;
-	TreeMap<Player, Integer> players;
+	TreeSet<Player> players;
 	Dice dice;
 	GameType type;
 	int numOfPlayer;
@@ -23,7 +24,7 @@ public class Game {
 	public Game(String gameId, GameType gameType, DiceType type) {
 		this.gameId = gameId;
 		board = Board.getInstance();
-		players = new TreeMap<Player, Integer>();
+		players = new TreeSet<Player>();
 		this.type = gameType;
 		dice = DiceFactory.getDice(type);
 		numOfPlayer = 0;
@@ -32,10 +33,10 @@ public class Game {
 	
 	public void addPlayer(String name, int sequence) {
 		Player p = new Player(name, sequence);
-		if(players.containsKey(p)) {
+		if(players.contains(p)) {
 			throw new SLException(ExceptionConstants.PLAYER_EXIST, "");
 		}
-		players.put(p, 0);
+		players.add(p);
 	}
 
 	public String getGameId() {
@@ -54,11 +55,11 @@ public class Game {
 		this.board = board;
 	}
 
-	public TreeMap<Player, Integer> getPlayers() {
+	public TreeSet<Player> getPlayers() {
 		return players;
 	}
 
-	public void setPlayers(TreeMap<Player, Integer> players) {
+	public void setPlayers(TreeSet<Player> players) {
 		this.players = players;
 	}
 

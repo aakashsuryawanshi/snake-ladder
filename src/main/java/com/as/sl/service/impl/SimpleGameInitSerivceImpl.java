@@ -10,19 +10,19 @@ import com.as.sl.entities.Game;
 import com.as.sl.entities.enums.DiceType;
 import com.as.sl.entities.enums.GameType;
 import com.as.sl.exception.SLException;
-import com.as.sl.service.InitService;
+import com.as.sl.service.GameInitService;
 import com.as.sl.utils.CommonUtils;
 
 
-public class InitializeSerivceImpl implements InitService{
+public class SimpleGameInitSerivceImpl implements GameInitService{
 
 	private CommonUtils utils;
 	
-	public InitializeSerivceImpl() {
+	public SimpleGameInitSerivceImpl() {
 		utils = CommonUtils.getInstance();
 	}
 	
-	@Override
+	@Override 
 	public Game initializeGame() {
 		try {
 			System.out.println(CommonConstants.FIRST_MSG);
@@ -90,9 +90,5 @@ public class InitializeSerivceImpl implements InitService{
 		board.addLadder(52, 88);
 		board.addLadder(80, 99);
 	}
-	
-	public static void main(String[] args) {
-		InitializeSerivceImpl service = new InitializeSerivceImpl();
-		service.initializeGame();
-	}
+
 }

@@ -9,7 +9,7 @@ import java.nio.charset.StandardCharsets;
 
 import org.junit.Test;
 
-import com.as.sl.service.impl.InitializeSerivceImpl;
+import com.as.sl.service.impl.SimpleGameInitSerivceImpl;
 
 
 public class SnakeLadderAppTest {

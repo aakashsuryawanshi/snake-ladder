@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 import com.as.sl.constants.CommonConstants;
 import com.as.sl.entities.Board;
@@ -66,17 +67,17 @@ public class CommonUtils {
 		return false;
 	}
 
-	public static void findWinner(TreeMap<Player, Integer> players) {
+	public static void findWinner(TreeSet<Player> players) {
 		int highestPosition = 0;
 		String names = "";
-		for(Map.Entry<Player, Integer> entry : players.entrySet()) {
-			if(entry.getKey().getPosition() >= highestPosition) {
-				highestPosition = entry.getKey().getPosition();
+		for(Player player: players) {
+			if(player.getPosition() >= highestPosition) {
+				highestPosition = player.getPosition();
 			}
 		}
-		for(Map.Entry<Player, Integer> entry : players.entrySet()) {
-			if(entry.getKey().getPosition() == highestPosition) { 
-				names += entry.getKey().getPlayerId() + " ";
+		for(Player player: players) {
+			if(player.getPosition() == highestPosition) { 
+				names += player.getPlayerId() + " ";
 			}
 		}
 		System.out.println(CommonConstants.WINNER_IS + names);

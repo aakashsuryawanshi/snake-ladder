@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import com.as.sl.SnakeLadderApp;
 
-public class InitalizeServiceImplTest {
+public class SimpleGameInitServiceImplTest {
 
 	@Test
 	public void testInitializeGame() {
@@ -19,7 +19,7 @@ public class InitalizeServiceImplTest {
 	    InputStream stream = new ByteArrayInputStream(data.getBytes(StandardCharsets.UTF_8));
 	    //final FileInputStream fips = new FileInputStream(new File("[path_to_file]"));
 	    System.setIn(stream);
-	    InitializeSerivceImpl service = new InitializeSerivceImpl();
+	    SimpleGameInitSerivceImpl service = new SimpleGameInitSerivceImpl();
 	    service.initializeGame();
 	    System.setIn(original);
 	}

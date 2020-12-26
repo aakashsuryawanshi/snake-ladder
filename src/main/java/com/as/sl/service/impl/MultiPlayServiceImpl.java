@@ -2,6 +2,7 @@ package com.as.sl.service.impl;
 
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 import com.as.sl.constants.CommonConstants;
 import com.as.sl.entities.Game;
@@ -19,13 +20,13 @@ public class MultiPlayServiceImpl implements PlayService{
 	
 	@Override
 	public void play(Game game) {
-		TreeMap<Player, Integer> players = game.getPlayers();
+		TreeSet<Player> players = game.getPlayers();
 		int turns = game.getNumOfTurns();
 		for(int i=0; i< turns; i++) {
 			System.out.println(CommonConstants.PLUS_SIGN_LINE);
 			System.out.println("Turn: " + (i + 1));
-			for(Map.Entry<Player, Integer> entry : players.entrySet()) {
-				Player player = entry.getKey();
+			for(Player player  : players) {
+				
 				System.out.println(player.getPlayerId() + CommonConstants.TURN);
 				if(!player.getPlayerId().equalsIgnoreCase(CommonConstants.SYSTEM)) {
 					System.out.println(CommonConstants.PRESS_ENTER);
